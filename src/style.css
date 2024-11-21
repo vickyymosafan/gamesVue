@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --primary: #3498DB;
+  --secondary: #2C3E50;
+  --text: #ECF0F1;
+  --background: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.game-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.new-game-btn {
+  background: var(--primary);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.new-game-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background: #2980b9;
+}
+
+.choice-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.choice-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.score {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.result {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  min-height: 2em;
+}
+
+.hands {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin: 2rem 0;
+}
+
+.hand {
+  font-size: 4rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hand.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.hand.winner {
+  animation: winner 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-30deg); }
+  75% { transform: rotate(30deg); }
+}
+
+@keyframes winner {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.loading {
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
