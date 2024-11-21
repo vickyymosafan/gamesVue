@@ -5,6 +5,8 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     sourcemap: true,
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -15,5 +17,9 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['vue3-particles', 'tsparticles', 'canvas-confetti']
+  },
+  server: {
+    host: true,
+    port: 3000
   }
 })
